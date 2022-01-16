@@ -3,12 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Django Web App</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </head>
 <body>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top">
+  <div><a href="/"><h3>Magazyn</h3></a></div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Pokaż menu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbar-content">
 
+    <ul class="navbar-nav" style="font-size: 90%">
+
+      <li class="nav-item">
+        <a class="nav-link" href="/"> Przegląd</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/productList"> Produkty</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/history"> Historia</a>
+      </li>
+
+    </ul>
+  </div>
+  </nav>
 {% block content %}
 
 {% endblock %}
-
+<footer class="footer text-center" style="background: #f5f5f5;
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;">
+  2022 Adrian Wielgus
+</footer>
 </body>
 </html>
