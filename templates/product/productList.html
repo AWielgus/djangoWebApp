@@ -10,7 +10,7 @@
                         <h4 class="col">Lista produktów</h4>
                         <div class="justify-content-center mr-3">
                             <div class="justify-content-center mr-3">
-                                <a class="btn-primary btn" href="/productAdd">Dodaj produkt</a>
+                                <a class="btn-primary btn" href="/productList/Add">Dodaj produkt</a>
                             </div>
                         </div>
                     </div>
@@ -26,25 +26,26 @@
                                     <td style="width: 15%">Opis</td>
                                     <td style="width: 10%">Ilość</td>
                                     <td style="width: 10%">Cena</td>
-                                    <td style="width: 15%">Data</td>
-                                    <td style="width: 10%">Akcja</td>
+                                    <td style="width: 7%">Akcja</td>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {% for el in list %}
-                                    {% if el.hidden == False %}
-                                        <tr>
-                                            <td>{{ el.name }}</td>
-                                            <td>{{ el.description }}</td>
-                                            <td>{{ el.amount }}</td>
-                                            <td>{{ el.price }}</td>
-                                            <td>Utworzony: {{ el.creation_date }}<br>Modyfikacja: {{ el.modification_date }}</td>
-                                            <td class="no-wrap">
-                                                <a class="btn btn-info" href="/productList/edit/{{ el.id }}">Edytuj</a>
-                                                <a class="btn btn-danger" href="/productList/delete/{{ el.id }}">Usuń</a>
-                                            </td>
-                                        </tr>
-                                    {% endif %}
+
+                                    <tr>
+                                        <td>{{ el.name }}</td>
+                                        <td>{{ el.description }}</td>
+                                        <td>{{ el.amount }}</td>
+                                        <td>{{ el.price }}</td>
+                                        <td class="no-wrap">
+                                            <form action="/remove" method="GET">
+                                                <input type="number" name="id" value="{{ el.id }}" hidden>
+                                                <button class="btn btn-danger" type="submit">Usuń</button>
+                                            </form>
+
+                                        </td>
+                                    </tr>
+
                                 {% endfor %}
                                 </tbody>
                             </table>

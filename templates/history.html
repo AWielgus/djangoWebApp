@@ -1,10 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <ul>
-    {% for foo in list %}
-        <li>{{ foo }}</li>
-    {% endfor %}
-    </ul>
+<div class="container-fluid px-4 mt-3 pb-4">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card card-outline-secondary mb-1">
+                <div class="card-header container-fluid" style="padding-bottom:0; border-bottom:0;">
+                    <div class="row justify-content-between">
+                        <h4 class="col">Historia</h4>
+                        <div class="justify-content-center mr-3">
+                            <div class="justify-content-center mr-3">
+                                <a class="btn-primary btn" href="/productList/Add">Dodaj produkt</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-1 mb-2"/>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade active show" id="status" role="tabpanel" aria-labelledby="status-tab">
+                            <table class="table table-responsive table-hover table-striped">
+                                <thead>
+                                <tr>
+                                    <td style="width: 30%">Nazwa produktu</td>
+                                    <td style="width: 50%">Opis</td>
+                                    <td style="width: 50%">Data</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for el in list %}
+                                    <tr>
+                                        <td>{{ el.product_name }}</td>
+                                        <td>{{ el.description }}</td>
+                                        <td>{{ el.update_date }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
