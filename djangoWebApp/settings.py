@@ -74,19 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djangoWebApp.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'django',
-#         'USER': 'cyboorg',
-#         'PASSWORD': 'cyboorg',
-#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-#         'PORT': '3306',
-#     }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
